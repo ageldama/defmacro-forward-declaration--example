@@ -1,0 +1,97 @@
+$ ./dmfd 
+
+debugger invoked on a UNBOUND-VARIABLE @B80009505A in thread
+#<THREAD tid=37091 "main thread" RUNNING {1200030003}>:
+  The variable DEFMACRO-FORWARD-DECLARATION::B is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE   ] Retry using DEFMACRO-FORWARD-DECLARATION::B.
+  1: [USE-VALUE  ] Use specified value.
+  2: [STORE-VALUE] Set specified value and use it.
+  3: [ABORT      ] Exit from the current thread.
+
+(DEFMACRO-FORWARD-DECLARATION:MAIN)
+   source: (A B)
+0] (disassemble #'dmfd:main)
+; disassembly for DEFMACRO-FORWARD-DECLARATION:MAIN
+; Size: 323 bytes. Origin: #xB800094F1F                       ; DEFMACRO-FORWARD-DECLARATION:MAIN
+; 4F1F:       498B4510         MOV RAX, [R13+16]              ; thread.binding-stack-pointer
+; 4F23:       488945F8         MOV [RBP-8], RAX
+; 4F27:       4C8B05A2FFFFFF   MOV R8, [RIP-94]               ; 'DEFMACRO-FORWARD-DECLARATION::B
+; 4F2E:       418B50F5         MOV EDX, [R8-11]
+; 4F32:       4A8B142A         MOV RDX, [RDX+R13]
+; 4F36:       4883FAFF         CMP RDX, -1
+; 4F3A:       490F445001       CMOVE RDX, [R8+1]
+; 4F3F:       80FA09           CMP DL, 9
+; 4F42:       0F8411010000     JE L0
+; 4F48:       4883EC10         SUB RSP, 16
+; 4F4C:       B902000000       MOV ECX, 2
+; 4F51:       48892C24         MOV [RSP], RBP
+; 4F55:       488BEC           MOV RBP, RSP
+; 4F58:       FF153A97A7FF     CALL [RIP-5793990]             ; DEFMACRO-FORWARD-DECLARATION::A
+; 4F5E:       480F42E3         CMOVB RSP, RBX
+; 4F62:       488955E8         MOV [RBP-24], RDX
+; 4F66:       4C8B056BFFFFFF   MOV R8, [RIP-149]              ; 'DEFMACRO-FORWARD-DECLARATION::A
+; 4F6D:       418B50F5         MOV EDX, [R8-11]
+; 4F71:       4A8B142A         MOV RDX, [RDX+R13]
+; 4F75:       4883FAFF         CMP RDX, -1
+; 4F79:       490F445001       CMOVE RDX, [R8+1]
+; 4F7E:       80FA09           CMP DL, 9
+; 4F81:       0F84D5000000     JE L1
+; 4F87:       4C8B0542FFFFFF   MOV R8, [RIP-190]              ; 'DEFMACRO-FORWARD-DECLARATION::B
+; 4F8E:       418B40F5         MOV EAX, [R8-11]
+; 4F92:       4A8B0428         MOV RAX, [RAX+R13]
+; 4F96:       4883F8FF         CMP RAX, -1
+; 4F9A:       490F444001       CMOVE RAX, [R8+1]
+; 4F9F:       3C09             CMP AL, 9
+; 4FA1:       0F84B8000000     JE L2
+; 4FA7:       488945F0         MOV [RBP-16], RAX
+; 4FAB:       4D8B8D78030000   MOV R9, [R13+888]              ; tls: *STANDARD-OUTPUT*
+; 4FB2:       4983F9FF         CMP R9, -1
+; 4FB6:       4C0F440C25307D0450 CMOVE R9, [#x50047D30]       ; *STANDARD-OUTPUT*
+; 4FBF:       4C894DE0         MOV [RBP-32], R9
+; 4FC3:       4883EC10         SUB RSP, 16
+; 4FC7:       488B7DE0         MOV RDI, [RBP-32]
+; 4FCB:       B904000000       MOV ECX, 4
+; 4FD0:       48892C24         MOV [RSP], RBP
+; 4FD4:       488BEC           MOV RBP, RSP
+; 4FD7:       FF153BC3A6FF     CALL [RIP-5848261]             ; PRINC
+; 4FDD:       4883EC10         SUB RSP, 16
+; 4FE1:       488B1500FFFFFF   MOV RDX, [RIP-256]             ; " // "
+; 4FE8:       488B7DE0         MOV RDI, [RBP-32]
+; 4FEC:       B904000000       MOV ECX, 4
+; 4FF1:       48892C24         MOV [RSP], RBP
+; 4FF5:       488BEC           MOV RBP, RSP
+; 4FF8:       FF150AB9A6FF     CALL [RIP-5850870]             ; WRITE-STRING
+; 4FFE:       4883EC10         SUB RSP, 16
+; 5002:       488B55F0         MOV RDX, [RBP-16]
+; 5006:       488B7DE0         MOV RDI, [RBP-32]
+; 500A:       B904000000       MOV ECX, 4
+; 500F:       48892C24         MOV [RSP], RBP
+; 5013:       488BEC           MOV RBP, RSP
+; 5016:       FF15FCC2A6FF     CALL [RIP-5848324]             ; PRINC
+; 501C:       4883EC10         SUB RSP, 16
+; 5020:       BA510A0000       MOV EDX, 2641
+; 5025:       488B7DE0         MOV RDI, [RBP-32]
+; 5029:       B904000000       MOV ECX, 4
+; 502E:       48892C24         MOV [RSP], RBP
+; 5032:       488BEC           MOV RBP, RSP
+; 5035:       FF15E5B4A6FF     CALL [RIP-5851931]             ; WRITE-CHAR
+; 503B:       488B15AEFEFFFF   MOV RDX, [RIP-338]             ; "hello"
+; 5042:       488B7DE8         MOV RDI, [RBP-24]
+; 5046:       498BF4           MOV RSI, R12                   ; NIL
+; 5049:       B906000000       MOV ECX, 6
+; 504E:       FF7508           PUSH QWORD PTR [RBP+8]
+; 5051:       FF253996A7FF     JMP [RIP-5794247]              ; DEFMACRO-FORWARD-DECLARATION::WITH-FOO-BAR
+; 5057:       CC0F             INT3 15                        ; Invalid argument count trap
+; 5059: L0:   CC19             INT3 25                        ; UNBOUND-SYMBOL-ERROR
+; 505B:       20               BYTE #X20                      ; R8(d)
+; 505C: L1:   CC19             INT3 25                        ; UNBOUND-SYMBOL-ERROR
+; 505E:       20               BYTE #X20                      ; R8(d)
+; 505F: L2:   CC19             INT3 25                        ; UNBOUND-SYMBOL-ERROR
+; 5061:       20               BYTE #X20                      ; R8(d)
+
+NIL
+0] 

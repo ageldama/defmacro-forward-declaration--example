@@ -1,0 +1,72 @@
+$ ./dmfd 
+; disassembly for DEFMACRO-FORWARD-DECLARATION:MAIN
+; Size: 294 bytes. Origin: #xB8000952BF                       ; DEFMACRO-FORWARD-DECLARATION:MAIN
+; 2BF:       498B4510         MOV RAX, [R13+16]               ; thread.binding-stack-pointer
+; 2C3:       488945F8         MOV [RBP-8], RAX
+; 2C7:       488B0592FFFFFF   MOV RAX, [RIP-110]              ; 'DEFMACRO-FORWARD-DECLARATION:MAIN
+; 2CE:       488B5009         MOV RDX, [RAX+9]
+; 2D2:       85D2             TEST EDX, EDX
+; 2D4:       0F8408010000     JE L0
+; 2DA:       4883EC10         SUB RSP, 16
+; 2DE:       B902000000       MOV ECX, 2
+; 2E3:       48892C24         MOV [RSP], RBP
+; 2E7:       488BEC           MOV RBP, RSP
+; 2EA:       FF15D0E3A6FF     CALL [RIP-5839920]              ; DISASSEMBLE
+; 2F0:       4883EC10         SUB RSP, 16
+; 2F4:       488B156DFFFFFF   MOV RDX, [RIP-147]              ; "FOO:"
+; 2FB:       488B3D6EFFFFFF   MOV RDI, [RIP-146]              ; "hello"
+; 302:       B904000000       MOV ECX, 4
+; 307:       48892C24         MOV [RSP], RBP
+; 30B:       488BEC           MOV RBP, RSP
+; 30E:       FF15AC80A7FF     CALL [RIP-5799764]              ; SB-KERNEL:%CONCATENATE-TO-STRING
+; 314:       4C8BCA           MOV R9, RDX
+; 317:       4C894DE0         MOV [RBP-32], R9
+; 31B:       4883EC10         SUB RSP, 16
+; 31F:       488B1552FFFFFF   MOV RDX, [RIP-174]              ; "BAR:"
+; 326:       488B3D43FFFFFF   MOV RDI, [RIP-189]              ; "hello"
+; 32D:       B904000000       MOV ECX, 4
+; 332:       48892C24         MOV [RSP], RBP
+; 336:       488BEC           MOV RBP, RSP
+; 339:       FF158180A7FF     CALL [RIP-5799807]              ; SB-KERNEL:%CONCATENATE-TO-STRING
+; 33F:       4C8B4DE0         MOV R9, [RBP-32]
+; 343:       488955F0         MOV [RBP-16], RDX
+; 347:       4D8B8578030000   MOV R8, [R13+888]               ; tls: *STANDARD-OUTPUT*
+; 34E:       4983F8FF         CMP R8, -1
+; 352:       4C0F440425307D0450 CMOVE R8, [#x50047D30]        ; *STANDARD-OUTPUT*
+; 35B:       4C8945E8         MOV [RBP-24], R8
+; 35F:       4883EC10         SUB RSP, 16
+; 363:       498BD1           MOV RDX, R9
+; 366:       488B7DE8         MOV RDI, [RBP-24]
+; 36A:       B904000000       MOV ECX, 4
+; 36F:       48892C24         MOV [RSP], RBP
+; 373:       488BEC           MOV RBP, RSP
+; 376:       FF158CB5A6FF     CALL [RIP-5851764]              ; WRITE-STRING
+; 37C:       4883EC10         SUB RSP, 16
+; 380:       488B1501FFFFFF   MOV RDX, [RIP-255]              ; " // "
+; 387:       488B7DE8         MOV RDI, [RBP-24]
+; 38B:       B904000000       MOV ECX, 4
+; 390:       48892C24         MOV [RSP], RBP
+; 394:       488BEC           MOV RBP, RSP
+; 397:       FF156BB5A6FF     CALL [RIP-5851797]              ; WRITE-STRING
+; 39D:       4883EC10         SUB RSP, 16
+; 3A1:       488B55F0         MOV RDX, [RBP-16]
+; 3A5:       488B7DE8         MOV RDI, [RBP-24]
+; 3A9:       B904000000       MOV ECX, 4
+; 3AE:       48892C24         MOV [RSP], RBP
+; 3B2:       488BEC           MOV RBP, RSP
+; 3B5:       FF154DB5A6FF     CALL [RIP-5851827]              ; WRITE-STRING
+; 3BB:       4883EC10         SUB RSP, 16
+; 3BF:       BA510A0000       MOV EDX, 2641
+; 3C4:       488B7DE8         MOV RDI, [RBP-24]
+; 3C8:       B904000000       MOV ECX, 4
+; 3CD:       48892C24         MOV [RSP], RBP
+; 3D1:       488BEC           MOV RBP, RSP
+; 3D4:       FF1546B1A6FF     CALL [RIP-5852858]              ; WRITE-CHAR
+; 3DA:       498BD4           MOV RDX, R12                    ; NIL
+; 3DD:       C9               LEAVE
+; 3DE:       F8               CLC
+; 3DF:       C3               RET
+; 3E0:       CC0F             INT3 15                         ; Invalid argument count trap
+; 3E2: L0:   CC13             INT3 19                         ; UNDEFINED-FUN-ERROR
+; 3E4:       00               BYTE #X00                       ; RAX(d)
+FOO:hello // BAR:hello
