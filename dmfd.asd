@@ -7,7 +7,8 @@
   ;; :around-compile (lambda (next)
   ;;                   (proclaim '(optimize (debug 3)
   ;;                               (safety 3)
-  ;;                               (speed 0)))
+  ;;                               (speed 3)
+  ;;                               (compilation-speed 0)))
   ;;                   (funcall next))
 
   :depends-on ()
